@@ -56,12 +56,17 @@ body {
   /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
 }
 
 .todo-list__subtitle {
   /* border: 1px solid black; */
   padding-left: 0.5rem;
+
   font-weight: bold;
+}
+.todo-list__state {
+  padding-left: 0.5rem;
 }
 
 .todo-list__item {
