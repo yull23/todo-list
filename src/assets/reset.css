@@ -1,0 +1,134 @@
+/* Reset básico de estilos para HTML */
+
+/* Eliminar el margen y el relleno predeterminados */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* outline: 0; */
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* Establecer un estilo de fuente base razonable */
+body {
+  line-height: 1.5;
+}
+
+/* Eliminar los estilos de lista predeterminados */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Eliminar la decoración de enlaces predeterminada */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Restablecer los estilos de formulario */
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: none;
+}
+
+/* Asegurarse de que los elementos de formulario sean visibles y accesibles */
+button,
+input,
+select,
+textarea {
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid black;
+}
+
+/* Eliminar los estilos de botones predeterminados */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+/* Establecer el estilo de cursor predeterminado para elementos */
+html {
+  cursor: auto;
+}
+
+/* Establecer un tamaño de caja de borde para todos los elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

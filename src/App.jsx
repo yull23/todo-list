@@ -1,41 +1,56 @@
+import { useState } from "react";
+import "./assets/styles.css";
+
 function App() {
+  const [newItem, setNewItem] = useState("");
+  const [todos, setTodos] = useState([]);
+  function handlerChange(event) {
+    setNewItem(event.target.value);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    setTodos([
+      ...todos,
+      { id: crypto.randomUUID(), title: newItem, completed: false },
+    ]);
+    console.log(todos);
+  }
+
   return (
-    <>
-      <div>Hello! World!</div>
-      <form action="">
-        <label htmlFor="item">New Item</label>
-        <input type="text" id="item" />
-        <button className="btn">Add Todo</button>
+    <div className="todo-list">
+      <h1 className="todo-list__header">Todo List</h1>
+      <form className="todo-list__form" onSubmit={handleSubmit}>
+        <label className="todo-list__label" htmlFor="item">
+          New Item
+        </label>
+        <input
+          className="todo-list__input input-text"
+          type="text"
+          id="item"
+          value={newItem}
+          onChange={handlerChange}
+        />
+        <button className="todo-list__button button">Add</button>
       </form>
-      <h1 className="header">Todo List</h1>
-      <ul>
-        <li>
-          <input type="checkbox" />
-          <p>item#1</p>
-          <button className="btn">delete</button>
-        </li>
-        <li>
-          <input type="checkbox" />
-          <p>item#2</p>
-          <button className="btn">delete</button>
-        </li>
-        <li>
-          <input type="checkbox" />
-          <p>item#3</p>
-          <button className="btn">delete</button>
-        </li>
-        <li>
-          <input type="checkbox" />
-          <p>item#4</p>
-          <button className="btn">delete</button>
-        </li>
-        <li>
-          <input type="checkbox" />
-          <p>item#5</p>
-          <button className="btn">delete</button>
-        </li>
-      </ul>
-    </>
+      <div className="todo-list__view">
+        <h2 className="todo-list__subtitle">List current:</h2>
+        <ul className="todo-list__list">
+          {todos.map((todo) => {
+            return (
+              <li className="todo-list__item" key={todo.id}>
+                <div className="todo-list__container-checkbox">
+                  <input type="checkbox" className="todo-list" />
+                </div>
+                <p className="todo-list__item-text">{todo.title}</p>
+                <button className="todo-list__item-button button">
+                  delete
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   );
 }
 
