@@ -1,5 +1,7 @@
 // rafce
 
+import TodoItem from "./TodoItem";
+
 const TodoList = ({ allTodos, deleteTodo, toggleTodo }) => {
   console.log(allTodos);
   return (
@@ -11,24 +13,30 @@ const TodoList = ({ allTodos, deleteTodo, toggleTodo }) => {
         )}
         {allTodos.map((todo) => {
           return (
-            <li className="todo-list__item" key={todo.id}>
-              <div className="todo-list__container-checkbox">
-                <input
-                  type="checkbox"
-                  className="todo-list"
-                  onChange={(e) => {
-                    toggleTodo(todo.id, e.target.checked);
-                  }}
-                />
-              </div>
-              <p className="todo-list__item-text">{todo.title}</p>
-              <button
-                className="todo-list__item-button button"
-                onClick={() => deleteTodo(todo.id)}
-              >
-                delete
-              </button>
-            </li>
+            <TodoItem
+              todo={todo}
+              deleteTodo={deleteTodo}
+              toggleTodo={toggleTodo}
+              key={todo.id}
+            />
+            // <li className="todo-list__item" key={todo.id}>
+            //   <div className="todo-list__container-checkbox">
+            //     <input
+            //       type="checkbox"
+            //       className="todo-list"
+            //       onChange={(e) => {
+            //         toggleTodo(todo.id, e.target.checked);
+            //       }}
+            //     />
+            //   </div>
+            //   <p className="todo-list__item-text">{todo.title}</p>
+            //   <button
+            //     className="todo-list__item-button button"
+            //     onClick={() => deleteTodo(todo.id)}
+            //   >
+            //     delete
+            //   </button>
+            // </li>
           );
         })}
       </ul>
