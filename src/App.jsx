@@ -43,3 +43,5 @@ function App() {
 }
 
 export default App;
+
+// It is recommended that you pass the properties of the elements in a broken down manner, to be able to validate each component

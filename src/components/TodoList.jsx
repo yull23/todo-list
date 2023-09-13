@@ -1,6 +1,7 @@
 // rafce
 
 import TodoItem from "./TodoItem";
+import PropTypes from "prop-types";
 
 const TodoList = ({ allTodos, deleteTodo, toggleTodo }) => {
   console.log(allTodos);
@@ -19,29 +20,17 @@ const TodoList = ({ allTodos, deleteTodo, toggleTodo }) => {
               toggleTodo={toggleTodo}
               key={todo.id}
             />
-            // <li className="todo-list__item" key={todo.id}>
-            //   <div className="todo-list__container-checkbox">
-            //     <input
-            //       type="checkbox"
-            //       className="todo-list"
-            //       onChange={(e) => {
-            //         toggleTodo(todo.id, e.target.checked);
-            //       }}
-            //     />
-            //   </div>
-            //   <p className="todo-list__item-text">{todo.title}</p>
-            //   <button
-            //     className="todo-list__item-button button"
-            //     onClick={() => deleteTodo(todo.id)}
-            //   >
-            //     delete
-            //   </button>
-            // </li>
           );
         })}
       </ul>
     </div>
   );
+};
+
+TodoList.propTtypes = {
+  allTodos: PropTypes.array,
+  deleteTodo: PropTypes.func,
+  toggleTodo: PropTypes.func,
 };
 
 export default TodoList;

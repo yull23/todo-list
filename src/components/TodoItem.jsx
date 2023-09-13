@@ -1,4 +1,5 @@
 // rafce
+import PropTypes from "prop-types";
 
 const TodoItem = ({ todo, deleteTodo, toggleTodo }) => {
   return (
@@ -22,6 +23,12 @@ const TodoItem = ({ todo, deleteTodo, toggleTodo }) => {
       </button>
     </li>
   );
+};
+
+TodoItem.propTtypes = {
+  todo: PropTypes.array,
+  deleteTodo: PropTypes.func,
+  toggleTodo: PropTypes.func,
 };
 
 export default TodoItem;
